@@ -22,13 +22,9 @@ export function Header() {
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none"></div>
           <nav className="flex items-center space-x-2">
-            <Button variant="outline" size="sm" className="h-8 hidden sm:flex">
-              <Upload className="mr-2 h-4 w-4" />
-              导入
-            </Button>
             <Button size="sm" className="h-8">
               <Download className="mr-2 h-4 w-4" />
-              下载 JSON
+              下载 C++ 头文件
             </Button>
 
             <DropdownMenu>
