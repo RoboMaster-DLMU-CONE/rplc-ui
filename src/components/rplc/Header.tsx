@@ -16,17 +16,12 @@ export function Header() {
       <div className="w-full max-w-[1800px] mx-auto flex h-14 items-center px-4 md:px-6 lg:px-8">
         <div className="mr-4 flex">
           <a className="mr-6 flex items-center space-x-2" href="/">
-            <span className="font-bold text-lg tracking-tight">RPL 配置器</span>
+            <span className="font-bold text-lg tracking-tight">RoboMaster Packet Library Compiler UI</span>
           </a>
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none"></div>
           <nav className="flex items-center space-x-2">
-            <Button size="sm" className="h-8">
-              <Download className="mr-2 h-4 w-4" />
-              下载 C++ 头文件
-            </Button>
-
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="h-8 w-8">

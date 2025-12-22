@@ -165,7 +165,7 @@ export function ConfigForm({ onConfigChange }: ConfigFormProps) {
                         <FormLabel className="text-xs">类型</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="h-8">
+                            <SelectTrigger className="h-8 w-full min-w-[120px]">
                               <SelectValue placeholder="选择类型" />
                             </SelectTrigger>
                           </FormControl>
