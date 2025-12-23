@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { AnimatedGridPattern } from '@/components/ui/animated-grid-pattern';
+
+import { BackgroundBeams } from '@/components/ui/background-beams';
 import { ConfigForm } from '@/components/rplc/ConfigForm';
 import { Header } from '@/components/rplc/Header';
 import { PreviewPanel } from '@/components/rplc/PreviewPanel';
@@ -38,20 +39,13 @@ const App = () => {
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="rplc-ui-theme">
-      <div className="min-h-screen bg-background font-sans antialiased flex flex-col">
+      <div className="min-h-screen bg-background font-sans antialiased flex flex-col relative">
+        <div className="fixed inset-0 z-0">
+          <BackgroundBeams />
+        </div>
         <Header />
-        <main className="flex-1 w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-8 relative">
-          {/* Animated grid background for tech feel */}
-          <AnimatedGridPattern
-            width={40}
-            height={40}
-            numSquares={50}
-            maxOpacity={0.5}
-            duration={4}
-            className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(500px_circle_at_center,white,transparent)]"
-          />
-
-          <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-6 py-6 relative z-10">
+        <main className="flex-1 w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-6 py-6">
             {/* 左侧：配置表单 */}
             <div className="w-full space-y-6">
               <ConfigForm onConfigChange={setConfig} />
