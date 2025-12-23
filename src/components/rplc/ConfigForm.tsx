@@ -88,8 +88,32 @@ export function ConfigForm({ onConfigChange }: ConfigFormProps) {
                 <FormItem>
                   <FormLabel>命名空间 (Namespace) - 可选</FormLabel>
                   <FormControl>
-                    <Input placeholder="Robot::Sensors" {...field} value={field.value || ""} />
+                    <Input
+                      placeholder="Robot::Sensors"
+                      value={field.value || ""}
+                      onChange={(e) => field.onChange(e.target.value || null)}
+                    />
                   </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="header_guard"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>头文件保护 (Header Guard) - 可选</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="留空自动生成，如: RPL_SENSORDATA_HPP"
+                      value={field.value || ""}
+                      onChange={(e) => field.onChange(e.target.value || null)}
+                    />
+                  </FormControl>
+                  <FormDescription>
+                    如果留空，将根据数据包名称自动生成
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}

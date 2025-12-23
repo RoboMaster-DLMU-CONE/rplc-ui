@@ -25,7 +25,7 @@ export const configSchema = z.object({
     }, "必须是有效的 uint16 (0-65535)"),
   namespace: z.string().optional().nullable(),
   packed: z.boolean().default(true),
-  header_guard: z.string().optional(),
+  header_guard: z.string().optional().nullable(),
   fields: z.array(fieldSchema).min(1, "至少需要一个字段"),
 });
 
@@ -37,7 +37,7 @@ export const defaultValues: RplcConfig = {
   command_id: "0x0104",
   namespace: null,
   packed: true,
-  header_guard: "",
+  header_guard: null,
   fields: [
     {
       name: "sensor_id",
