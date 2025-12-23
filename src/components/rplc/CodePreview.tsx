@@ -1,4 +1,5 @@
 import { Download, Loader2 } from 'lucide-react';
+import { RainbowButton } from '@/components/ui/rainbow-button';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CodeHighlight } from '@/components/ui/code-highlight';
@@ -48,14 +49,10 @@ export function CodePreview({
             )}
           </div>
           {code && !hasErrors && (
-            <Button
-              size="sm"
-              onClick={handleDownload}
-              className="transition-all hover:shadow-sm"
-            >
-              <Download className="h-4 w-4 mr-2" />
+            <RainbowButton variant="outline" onClick={handleDownload}>
+              <Download />
               下载
-            </Button>
+            </RainbowButton>
           )}
         </div>
       </CardHeader>
